@@ -95,4 +95,103 @@
 
         .video-container iframe {
             position: absolute;
-            top: 0; left:
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .card-body { padding: 1.5rem; }
+        .card-title { font-weight: bold; margin-bottom: 8px; color: var(--azul-byte); }
+        .card-text { font-size: 0.9rem; color: #555; line-height: 1.4; }
+
+        /* Botones de Descarga */
+        .download-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .btn-download {
+            background: var(--dorado-byte);
+            color: var(--blanco);
+            padding: 15px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover { background: #b88a14; }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="logo.png" alt="Logo Bytecomtec" class="logo-img">
+        <h1 class="brand-name">BYTECOMTEC INGENIERÍA</h1>
+        <p class="tagline">Soluciones Tecnológicas para la Comunidad Escolar</p>
+    </div>
+</header>
+
+<div class="container">
+    
+    <h2><i class="fas fa-play-circle"></i> Videoteca de Seguridad Escolar</h2>
+    <div class="video-grid">
+        
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_BULLYING" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Prevención de Bullying</div>
+                <div class="card-text">Supervisión estratégica de puntos ciegos para fomentar una convivencia sana.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_CCTV" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Seguridad 4K en Planteles</div>
+                <div class="card-text">Conoce la calidad de imagen necesaria para la protección de activos escolares.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <h2><i class="fas fa-folder-open"></i> Recursos para el Comité (CEAP)</h2>
+    <div class="download-section">
+        <a href="catalogo-2026.pdf" class="btn-download" target="_blank">
+            <i class="fas fa-file-pdf"></i> Catálogo de Soluciones
+        </a>
+        <a href="ficha-comprobacion.pdf" class="btn-download" target="_blank">
+            <i class="fas fa-check-double"></i> Guía de Comprobación
+        </a>
+        <a href="https://wa.me/52123338783988" class="btn-download" style="background-color: #25d366;">
+            <i class="fab fa-whatsapp"></i> Consultar con un Ingeniero
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Bytecomtec Ingeniería & Seguridad Digital<br>
+    San José Tláhuac, CDMX.</p>
+</footer>
+
+</body>
+</html>
