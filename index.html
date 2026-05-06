@@ -9,8 +9,10 @@
         :root {
             --azul-byte: #01579b;
             --dorado-byte: #d4a017;
+            --guinda-sep: #a02142;
             --gris-fondo: #f4f7f6;
             --blanco: #ffffff;
+            --azul-oscuro: #012d52;
         }
 
         body {
@@ -20,7 +22,6 @@
             color: #333;
         }
 
-        /* Encabezado con Logo */
         header {
             background-color: var(--azul-byte);
             color: var(--blanco);
@@ -36,29 +37,10 @@
             gap: 10px;
         }
 
-.logo-img {
-            max-width: 180px; /* Mantén el tamaño que prefieras */
-            height: auto;
-            /* ELIMINAMOS EL FILTRO BLANCO */
-            filter: none; 
-        }
-        }
-
-        .brand-name { 
-            font-weight: bold; 
-            font-size: 1.6rem; 
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-        .tagline {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin: 3px 0 0 0;
-        }
+        .logo-img { max-width: 180px; height: auto; }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
@@ -67,7 +49,8 @@
             border-left: 5px solid var(--dorado-byte);
             padding-left: 15px;
             color: var(--azul-byte);
-            margin-bottom: 1.5rem;
+            margin: 2.5rem 0 1.5rem 0;
+            font-size: 1.4rem;
         }
 
         /* Grid de Videos */
@@ -75,7 +58,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
         }
 
         .card {
@@ -84,9 +67,11 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .card:hover { transform: translateY(-8px); }
+        .card:hover { transform: translateY(-5px); }
 
         .video-container {
             position: relative;
@@ -100,21 +85,19 @@
             top: 0; left: 0; width: 100%; height: 100%;
         }
 
-        .card-body { padding: 1.5rem; }
-        .card-title { font-weight: bold; margin-bottom: 8px; color: var(--azul-byte); }
+        .card-body { padding: 1.2rem; flex-grow: 1; }
+        .card-title { font-weight: bold; margin-bottom: 8px; color: var(--azul-byte); font-size: 1.1rem; }
         .card-text { font-size: 0.9rem; color: #555; line-height: 1.4; }
 
-        /* Botones de Descarga */
+        /* Sección de Botones */
         .download-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
-            margin-top: 1rem;
         }
 
-        .btn-download {
-            background: var(--dorado-byte);
-            color: var(--blanco);
+        .btn-download, .boton-descarga {
+            color: white !important;
             padding: 15px 20px;
             text-decoration: none;
             border-radius: 8px;
@@ -123,10 +106,18 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            transition: background 0.2s;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
         }
 
-        .btn-download:hover { background: #b88a14; }
+        .btn-download:hover, .boton-descarga:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
 
         footer {
             text-align: center;
@@ -134,7 +125,7 @@
             font-size: 0.85rem;
             color: #777;
             border-top: 1px solid #ddd;
-            margin-top: 2rem;
+            margin-top: 4rem;
         }
     </style>
 </head>
@@ -143,10 +134,9 @@
 <header>
     <div class="header-content">
         <img src="logo.png" alt="Logo Bytecomtec" class="logo-img">
-        <h1 class="brand-name">BYTECOMTEC INGENIERÍA</h1>
-        <p class="tagline">La precisión de la ingeniería, la certeza de la seguridad</p>
-        <p class="tagline">Especialistas en soluciones para el sector educativo</p>
-
+        <h1 style="margin:0; font-size: 1.6rem;">BYTECOMTEC INGENIERÍA</h1>
+        <p style="margin:5px 0 0 0; opacity:0.9;">La precisión de la ingeniería, la certeza de la seguridad</p>
+        <p style="margin:2px 0 0 0; font-size: 0.9rem;">Especialistas en soluciones para el sector educativo</p>
     </div>
 </header>
 
@@ -154,172 +144,138 @@
     
     <h2><i class="fas fa-play-circle"></i> Videoteca de Seguridad Escolar</h2>
     <div class="video-grid">
-        
         <div class="card">
-            <div class="video-container">
-                <iframe src="https://bytecomtec.github.io/Bulling/" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <div class="video-container"><iframe src="https://bytecomtec.github.io/Bulling/" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
                 <div class="card-title">Prevención de Bullying</div>
-                <div class="card-text">Supervisión inteligente para entornos escolares: Eliminamos las zonas de riesgo con tecnología de precisión, garantizando que tus alumnos se sientan seguros y tus docentes tengan el apoyo que necesitan.</div>
+                <div class="card-text">Supervisión inteligente para entornos escolares.</div>
             </div>
         </div>
 
         <div class="card">
-            <div class="video-container">
-                <iframe src="https://bytecomtec.github.io/Color_Vu" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <div class="video-container"><iframe src="https://bytecomtec.github.io/Color_Vu" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
                 <div class="card-title">Color 24/7 Excelente calidad</div>
-                <div class="card-text">Claridad absoluta para decisiones justas: Porque los incidentes no eligen horario, nuestras cámaras captan cada detalle a color, incluso en total oscuridad, eliminando cualquier zona de duda.</div>
+                <div class="card-text">Claridad absoluta para decisiones justas en cualquier horario.</div>
             </div>
         </div>
 
         <div class="card">
-            <div class="video-container">
-                <iframe src="https://bytecomtec.github.io/Pantalla_interactiva/" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <div class="video-container"><iframe src="https://bytecomtec.github.io/Pantalla_interactiva/" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
                 <div class="card-title">Pantallas Interactivas</div>
-                <div class="card-text">Tecnología diseñada para enseñar, no para complicar: Potencia el talento de tus docentes con pantallas intuitivas que hacen las clases más fluidas, atractivas y fáciles de gestionar.</div>
-            </div>
-        </div>
-        
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://bytecomtec.github.io/Video_Audio_Bidireccional/" frameborder="0" allowfullscreen></iframe>
-            </div>
-         
-             <div class="card-body">
-                <div class="card-title">Audio Bidireccional</div>
-                <div class="card-text">Tu voz donde más se necesita: Optimiza la comunicación escolar con un sistema que te permite dar avisos o resolver dudas en áreas específicas sin interrumpir el ritmo de la escuela.</div>
-            </div>
-        </div>  
-        
-        <div class="card">
-            <div class="video-container">
-                <iframe src="https://bytecomtec.github.io/Cv3/" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="card-body">
-                <div class="card-title">Nueva Tecnología 24/7 - Generación 3.0</div>
-                <div class="card-text">Detalles que marcan la diferencia: Olvida las imágenes borrosas y oscuras. Nuestra tecnología 3.0 te permite identificar rostros y matrículas con total claridad las 24 horas, garantizando que nada pase desapercibido.</div>
+                <div class="card-text">Potencia el talento docente con tecnología intuitiva.</div>
             </div>
         </div>
 
         <div class="card">
-            <div class="video-container">
-                <iframe src="https://bytecomtec.github.io/Audio_parlante/" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container"><iframe src="https://bytecomtec.github.io/Video_Audio_Bidireccional/" frameborder="0" allowfullscreen></iframe></div>
+            <div class="card-body">
+                <div class="card-title">Audio Bidireccional</div>
+                <div class="card-text">Tu voz donde más se necesita para optimizar la comunicación.</div>
             </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container"><iframe src="https://bytecomtec.github.io/Cv3/" frameborder="0" allowfullscreen></iframe></div>
+            <div class="card-body">
+                <div class="card-title">Nueva Tecnología 24/7 - Gen 3.0</div>
+                <div class="card-text">Identificación de rostros y matrículas con total claridad.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container"><iframe src="https://bytecomtec.github.io/Audio_parlante/" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
                 <div class="card-title">Altavoz de Red</div>
-                <div class="card-text">Tu voz, tu mejor herramienta de prevención: Emite alertas instantáneas y avisos automáticos con claridad total, manteniendo el orden y la seguridad en cada rincón de la escuela.</div>
+                <div class="card-text">Emite alertas instantáneas con claridad total en toda la escuela.</div>
             </div>
-
         </div>
-
     </div>
 
-<h2><i class="fas fa-user-check"></i> Guías de apoyo La Escuela es Nuestra</h2>
-<div class="download-section">
-    <a href="https://bytecomtec.github.io/Informacion/" class="btn-download" style="background-color: var(--guinda-sep);">
-        <i class="fas fa-exclamation-triangle"></i> Info Atención 2026
-    </a>
-
-    <a href="https://bytecomtec.github.io/Guia_facilitador/" class="btn-download" style="background-color: var(--guinda-sep);">
-        <i class="fas fa-edit"></i> Guía Facilitador 2026
-    </a>
-
-    <a href="https://bytecomtec.github.io/Guia_horextendido/" class="btn-download" style="background-color: var(--guinda-sep);">
-        <i class="far fa-clock"></i> Guía Horario Extendido 2026
-    </a>
-
-    <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Superior/" class="btn-download" style="background-color: var(--guinda-sep);">
-        <i class="fas fa-handshake"></i> Guía CEAP Medio Superior 2026
-    </a>
-
-    <!-- AQUÍ ESTABA EL ERROR: Se agregó </a> al final -->
-    <a href="https://bytecomtec.github.io/Tarjeta_Bienestar/" class="btn-download" style="background-color: var(--guinda-sep);">
-        <i class="fas fa-credit-card"></i> Uso de Tarjeta Bienestar 2026
-    </a> 
-
-    <!-- Botón de descarga corregido -->
-    <a href="https://bytecomtec.github.io/Guia-Ceap/Guia-CeapV6.pdf" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
-        <i class="fas fa-file-pdf"></i> Descargar Catálogo en PDF
-    </a>
-
-    <a href="https://bytecomtec.github.io/Guia-Ceap/" class="btn-download" style="background-color: var(--guinda-sep);">
-        <i class="fas fa-file-alt"></i> Guía CEAP - (Descargar)
-    </a>
-
-    <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Basica/" class="btn-download" style="background-color: var(--guinda-sep);">
-        <i class="fas fa-file-alt"></i> Guía CEAP - (Visualizar)
-    </a>
-</div>
-
-    <h2><i class="fas fa-user-plus"></i> Guías de apoyo Bytecomtec.</h2>
+    <h2><i class="fas fa-user-check"></i> Guías La Escuela es Nuestra (LEEN)</h2>
     <div class="download-section">
-        <a href="https://bytecomtec.github.io/Carta_Presentacion/" class="btn-download" style="background-color: #012d52;">
-            <i class="fas fa-file-alt"></i> Carta de presentación Bytecomtec
+        <a href="https://bytecomtec.github.io/Informacion/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-exclamation-triangle"></i> Info Atención 2026
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_facilitador/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-edit"></i> Guía Facilitador 2026
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_horextendido/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="far fa-clock"></i> Guía Horario Extendido 2026
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Superior/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-handshake"></i> Guía CEAP Medio Superior 2026
+        </a>
+        <a href="https://bytecomtec.github.io/Tarjeta_Bienestar/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-credit-card"></i> Uso de Tarjeta Bienestar 2026
+        </a>
+        
+        <!-- BOTÓN DE DESCARGA PDF CORREGIDO -->
+        <a href="https://bytecomtec.github.io/Guia-Ceap/Guia-CeapV6.pdf" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
+            <i class="fas fa-file-pdf"></i> DESCARGAR GUÍA CEAP (PDF)
         </a>
 
-        <a href="https://bytecomtec.github.io/seleccion-proveedores/" class="btn-download" style="background-color: #012d52;">
-            <i class="fas fa-truck"></i> Guía para selección y contratación de proveedores
+        <a href="https://bytecomtec.github.io/Guia-Ceap/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-file-alt"></i> Guía CEAP - (Digital)
         </a>
+        <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Basica/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-file-alt"></i> Guía CEAP - (Visualizar)
+        </a>
+    </div>
 
-        <a href="https://bytecomtec.github.io/Guia_tecnica/" class="btn-download" style="background-color: #012d52;">
+    <h2><i class="fas fa-user-plus"></i> Guías de apoyo Bytecomtec</h2>
+    <div class="download-section">
+        <a href="https://bytecomtec.github.io/Carta_Presentacion/" class="btn-download" style="background-color: var(--azul-oscuro);">
+            <i class="fas fa-file-alt"></i> Carta de presentación
+        </a>
+        <a href="https://bytecomtec.github.io/seleccion-proveedores/" class="btn-download" style="background-color: var(--azul-oscuro);">
+            <i class="fas fa-truck"></i> Selección de proveedores
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_tecnica/" class="btn-download" style="background-color: var(--azul-oscuro);">
             <i class="fas fa-users"></i> Guía de transparencia
-        </a>        
+        </a>
     </div>
 
     <h2><i class="fas fa-file-pdf"></i> Servicios para el Comité</h2>
     <div class="download-section">
-
-        <a href="https://bytecomtec.github.io/catalogo-cctv/" class="btn-download" target="_blank">
-            <i class="fas fa-video"></i> Folleto de Videovigilancia
+        <a href="https://bytecomtec.github.io/catalogo-cctv/" class="btn-download" style="background-color: var(--azul-byte);">
+            <i class="fas fa-video"></i> Folleto Videovigilancia
         </a>
-
-        <a href="https://bytecomtec.github.io/Audio_Bidireccional/" class="btn-download" target="_blank">
-            <i class="far fa-comments"></i> Folleto Audio Bidireccional
+        <a href="https://bytecomtec.github.io/Audio_Bidireccional/" class="btn-download" style="background-color: var(--azul-byte);">
+            <i class="far fa-comments"></i> Audio Bidireccional
         </a>
-
-        <a href="https://bytecomtec.github.io/Folleto_cableado-wifi/" class="btn-download" target="_blank">
-            <i class="fas fa-wifi"></i> Cableado, Wi-fi y Fibra Óptica
+        <a href="https://bytecomtec.github.io/Folleto_cableado-wifi/" class="btn-download" style="background-color: var(--azul-byte);">
+            <i class="fas fa-wifi"></i> Wi-fi y Fibra Óptica
         </a>
-
-        <a href="https://bytecomtec.github.io/Audio_profesional/" class="btn-download" target="_blank">
+        <a href="https://bytecomtec.github.io/Audio_profesional/" class="btn-download" style="background-color: var(--azul-byte);">
             <i class="fas fa-volume-up"></i> Folleto Audio Escolar
         </a>
-
-        <a href="https://bytecomtec.github.io/Poliza/" class="btn-download" target="_blank">
+        <a href="https://bytecomtec.github.io/Poliza/" class="btn-download" style="background-color: var(--azul-byte);">
             <i class="fas fa-check-double"></i> Pólizas de Servicio
         </a>
-
-        <a href="https://bytecomtec.github.io/Catalogo-soluciones/" class="btn-download" target="_blank">
-            <i class="far fa-list-alt"></i> Catálogo Completo de servicios
+        <a href="https://bytecomtec.github.io/Catalogo-soluciones/" class="btn-download" style="background-color: var(--azul-byte);">
+            <i class="far fa-list-alt"></i> Catálogo Completo
         </a>
     </div>
 
-    <h2><i class="fa fa-comments"></i> Área de contacto para más información</h2>
+    <h2><i class="fa fa-comments"></i> Contacto y Soporte</h2>
     <div class="download-section">
-
-        <a href="https://bytecomtec.com/solicitud.html/" class="btn-download" style="background-color: #ff7f2aff;">
-            <i class="fas fa-wrench"></i> Solicite un servicio
+        <a href="https://bytecomtec.com/solicitud.html/" class="btn-download" style="background-color: #ff7f2a;">
+            <i class="fas fa-wrench"></i> Solicitar servicio
         </a>
-        
-        <a href="https://bytecomtec.com" class="btn-download" style="background-color: #012d52;">
-            <i class="fas fa-globe"></i> Visita nuestra Página web
+        <a href="https://bytecomtec.com" class="btn-download" style="background-color: var(--azul-oscuro);">
+            <i class="fas fa-globe"></i> Web Oficial
         </a>
-
         <a href="https://wa.me/525516101675" class="btn-download" style="background-color: #25d366;">
-            <i class="fab fa-whatsapp"></i> Consultar con un Ejecutivo
+            <i class="fab fa-whatsapp"></i> WhatsApp Ejecutivo
         </a>
     </div>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 Bytecomtec Ingeniería y Seguridad Digital<br>
-    San José Tláhuac, CDMX.</p>
+    <p>&copy; 2026 Bytecomtec Ingeniería y Seguridad Digital<br>San José Tláhuac, CDMX.</p>
 </footer>
 
 </body>
