@@ -1,0 +1,21 @@
+.descarga-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.boton-descarga {
+    background-color: #007bff; /* Azul profesional */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.boton-descarga:hover {
+    background-color: #0056b3;
+}
