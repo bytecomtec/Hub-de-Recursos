@@ -1,29 +1,40 @@
-.descarga-container {
-    text-align: center;
-    margin: 20px 0;
-}
+<style>
+    :root {
+        --azul-byte: #01579b;
+        --dorado-byte: #d4a017;
+        --guinda-sep: #a02142; /* Color institucional */
+        --gris-fondo: #f4f7f6;
+        --blanco: #ffffff;
+    }
 
-.boton-descarga {
-    background-color: #007bff;
-    color: white !important; /* Asegura el color blanco */
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    
-    /* ESTO CENTRA EL CONTENIDO */
-    display: inline-flex;     /* Permite centrado interno */
-    align-items: center;      /* Centrado vertical */
-    justify-content: center;   /* Centrado horizontal */
-    gap: 10px;                /* Espacio entre el icono y el texto */
-    
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border: none;
-    cursor: pointer;
-}
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--gris-fondo);
+        margin: 0;
+        color: #333;
+    }
 
-.boton-descarga:hover {
-    background-color: #0056b3;
-}
+    /* ... (mantén tus otros estilos igual) ... */
+
+    .btn-download, .boton-descarga {
+        background: var(--dorado-byte);
+        color: var(--blanco) !important;
+        padding: 15px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        border: none;
+        text-align: center;
+    }
+
+    .btn-download:hover, .boton-descarga:hover {
+        background: #b88a14;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+</style>
