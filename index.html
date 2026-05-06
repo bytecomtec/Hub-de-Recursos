@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concentrado de Recursos - Bytecomtec Ingeniería</title>
+    <title>Centro de Consulta Técnica - Bytecomtec Ingeniería</title>
+    <meta name="description" content="Portal de recursos técnicos y guías oficiales LEEN 2026 para directivos escolares. Bytecomtec: Ingeniería y Seguridad Digital.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -13,6 +14,7 @@
             --gris-fondo: #f4f7f6;
             --blanco: #ffffff;
             --azul-oscuro: #012d52;
+            --gris-descarga: #4a4a4a;
         }
 
         body {
@@ -23,9 +25,9 @@
         }
 
         header {
-            background-color: var(--azul-byte);
+            background: linear-gradient(135deg, var(--azul-byte) 0%, var(--azul-oscuro) 100%);
             color: var(--blanco);
-            padding: 1.5rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -141,113 +143,108 @@
 </header>
 
 <div class="container">
-    
-    <h2><i class="fas fa-play-circle"></i> Videoteca de Seguridad Escolar</h2>
+
+    <!-- Se subió de prioridad para el Director -->
+    <h2><i class="fas fa-user-check"></i> Herramientas de Apoyo para el Comité (LEEN 2026)</h2>
+    <div class="download-section">
+        <a href="https://bytecomtec.github.io/Informacion/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-exclamation-triangle"></i> VISUALIZAR Folleto de Atención 2026
+        </a>
+        <a href="https://bytecomtec.github.io/Informacion/Informacion.pdf" download="Folleto-Atencion-LEEN-2026.pdf" class="boton-descarga" style="background-color: var(--gris-descarga);">
+            <i class="fas fa-file-pdf"></i> DESCARGAR Folleto de Atención (PDF)
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_facilitador/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-edit"></i> VISUALIZAR Guía del Facilitador 2026
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_facilitador/Guia_facilitador.pdf" download="Guia-Facilitador-LEEN-2026.pdf" class="boton-descarga" style="background-color: var(--gris-descarga);">
+            <i class="fas fa-file-pdf"></i> DESCARGAR Guía del Facilitador (PDF)
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_horextendido/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="far fa-clock"></i> VISUALIZAR Guía Horario Extendido
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_horextendido/Guia_horextendido.pdf" download="Guia-Horario-Extendido-2026.pdf" class="boton-descarga" style="background-color: var(--gris-descarga);">
+            <i class="fas fa-file-pdf"></i> DESCARGAR Guía Horario Extendido (PDF)
+        </a>
+        <a href="https://bytecomtec.github.io/Tarjeta_Bienestar/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-credit-card"></i> VISUALIZAR Uso de Tarjeta Bienestar
+        </a>
+        <a href="https://bytecomtec.github.io/Tarjeta_Bienestar/Tarjeta_Bienestar.pdf" download="Guia-Uso-Tarjeta-Bienestar.pdf" class="boton-descarga" style="background-color: var(--gris-descarga);">
+            <i class="fas fa-file-pdf"></i> DESCARGAR Uso de Tarjeta Bienestar (PDF)
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Basica/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-eye"></i> VISUALIZAR Guía Apoyo Ed. Básica
+        </a>
+        <a href="https://bytecomtec.github.io/Guia-Ceap/Guia-CeapV6.pdf" download="Guia-Apoyo-Basica-V6.pdf" class="boton-descarga" style="background-color: var(--gris-descarga);">
+            <i class="fas fa-file-pdf"></i> DESCARGAR Guía Apoyo Ed. Básica (PDF)
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Superior/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-handshake"></i> VISUALIZAR Guía CEAP Medio Superior
+        </a>
+        <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Superior/Guia_Ceap_Media_Superior.pdf" download="Guia-CEAP-Medio-Superior.pdf" class="boton-descarga" style="background-color: var(--gris-descarga);">
+            <i class="fas fa-file-pdf"></i> DESCARGAR Guía CEAP Medio Superior (PDF)
+        </a>
+    </div>
+
+    <h2><i class="fas fa-play-circle"></i> Videoteca de Soluciones Técnicas</h2>
     <div class="video-grid">
         <div class="card">
             <div class="video-container"><iframe src="https://bytecomtec.github.io/Bulling/" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
                 <div class="card-title">Prevención de Bullying</div>
-                <div class="card-text">Supervisión inteligente para entornos escolares.</div>
+                <div class="card-text">Supervisión inteligente para entornos escolares seguros.</div>
             </div>
         </div>
-
         <div class="card">
             <div class="video-container"><iframe src="https://bytecomtec.github.io/Color_Vu" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
-                <div class="card-title">Color 24/7 Excelente calidad</div>
-                <div class="card-text">Claridad absoluta para decisiones justas en cualquier horario.</div>
+                <div class="card-title">Tecnología Color 24/7</div>
+                <div class="card-text">Evidencia con claridad absoluta en cualquier horario.</div>
             </div>
         </div>
-
         <div class="card">
             <div class="video-container"><iframe src="https://bytecomtec.github.io/Pantalla_interactiva/" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
                 <div class="card-title">Pantallas Interactivas</div>
-                <div class="card-text">Potencia el talento docente con tecnología intuitiva.</div>
+                <div class="card-text">Tecnología intuitiva para potenciar el talento docente.</div>
             </div>
         </div>
-
         <div class="card">
             <div class="video-container"><iframe src="https://bytecomtec.github.io/Video_Audio_Bidireccional/" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
                 <div class="card-title">Audio Bidireccional</div>
-                <div class="card-text">Tu voz donde más se necesita para optimizar la comunicación.</div>
+                <div class="card-text">Comunicación inmediata donde más se necesita.</div>
             </div>
         </div>
-
         <div class="card">
             <div class="video-container"><iframe src="https://bytecomtec.github.io/Cv3/" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
-                <div class="card-title">Nueva Tecnología 24/7 - Gen 3.0</div>
-                <div class="card-text">Identificación de rostros y matrículas con total claridad.</div>
+                <div class="card-title">Identificación Gen 3.0</div>
+                <div class="card-text">Reconocimiento preciso de rostros y matrículas.</div>
             </div>
         </div>
-
         <div class="card">
             <div class="video-container"><iframe src="https://bytecomtec.github.io/Audio_parlante/" frameborder="0" allowfullscreen></iframe></div>
             <div class="card-body">
-                <div class="card-title">Altavoz de Red</div>
-                <div class="card-text">Emite alertas instantáneas con claridad total en toda la escuela.</div>
+                <div class="card-title">Alertas de Red</div>
+                <div class="card-text">Emisión de avisos instantáneos con cobertura total.</div>
             </div>
         </div>
     </div>
 
-    <h2><i class="fas fa-user-check"></i> Guías La Escuela es Nuestra (LEEN)</h2>
-    <div class="download-section">
-        <a href="https://bytecomtec.github.io/Informacion/" class="btn-download" style="background-color: var(--guinda-sep);">
-            <i class="fas fa-exclamation-triangle"></i> VISUALIZAR Folleto de Atención 2026
-        </a>
-        <a href="https://bytecomtec.github.io/Informacion/Informacion.pdf" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
-            <i class="fas fa-file-pdf"></i> DESCARGAR Folleto de Atención 2026 (PDF)
-        </a>
-        <a href="https://bytecomtec.github.io/Guia_facilitador/" class="btn-download" style="background-color: var(--guinda-sep);">
-            <i class="fas fa-edit"></i> VISUUALIZAR Guía del Facilitador 2026
-        </a>
-        <a href="https://bytecomtec.github.io/Guia_facilitador/Guia_facilitador.pdf" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
-            <i class="fas fa-file-pdf"></i> DESCARGAR Guía del Facilitador 2026 (PDF)
-        </a>
-        <a href="https://bytecomtec.github.io/Guia_horextendido/" class="btn-download" style="background-color: var(--guinda-sep);">
-            <i class="far fa-clock"></i> VISUALIZAR Guía Horario Extendido 2026
-        </a>
-        <a href="https://bytecomtec.github.io/Guia_horextendido/Guia_horextendido.pdf" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
-            <i class="fas fa-file-pdf"></i> DESCARGAR Guía Horario Extendido 2026 (PDF)
-        </a>
-        <a href="https://bytecomtec.github.io/Tarjeta_Bienestar/" class="btn-download" style="background-color: var(--guinda-sep);">
-            <i class="fas fa-credit-card"></i> VISUALIZAR Uso de Tarjeta Bienestar 2026
-        </a>
-        <a href="https://bytecomtec.github.io/Tarjeta_Bienestar/Tarjeta_Bienestar.pdf" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
-            <i class="fas fa-file-pdf"></i> DESCARGAR Uso de Tarjeta Bienestar 2026 (PDF)
-        </a>
-        <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Basica/" class="btn-download" style="background-color: var(--guinda-sep);">
-            <i class="fas fa-eye"></i> VISUALIZAR Guía de Apoyo Educación Media 2026 
-        </a>
-        <!-- BOTÓN DE DESCARGA PDF CORREGIDO -->
-        <a href="https://bytecomtec.github.io/Guia-Ceap/Guia-CeapV6.pdf" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
-            <i class="fas fa-file-pdf"></i> DESCARGAR Guía de Apoyo Educación Media 2026 (PDF)
-        </a>
-        <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Superior/" class="btn-download" style="background-color: var(--guinda-sep);">
-            <i class="fas fa-handshake"></i> VISUALIZAR Guía CEAP Medio Superior 2026
-        </a>
-        <a href="https://bytecomtec.github.io/Guia_Ceap_Media_Superior/Guia_Ceap_Media_Superior" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
-            <i class="fas fa-file-pdf"></i> DESCARGAR Guía CEAP Medio Superior 2026 (PDF)
-        </a>
-    </div>
-
-    <h2><i class="fas fa-user-plus"></i> Guías de apoyo Bytecomtec</h2>
+    <h2><i class="fas fa-user-plus"></i> Documentación de Transparencia</h2>
     <div class="download-section">
         <a href="https://bytecomtec.github.io/Carta_Presentacion/" class="btn-download" style="background-color: var(--azul-oscuro);">
-            <i class="fas fa-file-alt"></i> Carta de presentación
+            <i class="fas fa-file-alt"></i> Carta de Presentación
         </a>
         <a href="https://bytecomtec.github.io/seleccion-proveedores/" class="btn-download" style="background-color: var(--azul-oscuro);">
-            <i class="fas fa-truck"></i> Selección de proveedores
+            <i class="fas fa-truck"></i> Guía: Selección de Proveedores
         </a>
         <a href="https://bytecomtec.github.io/Guia_tecnica/" class="btn-download" style="background-color: var(--azul-oscuro);">
-            <i class="fas fa-users"></i> Guía de transparencia
+            <i class="fas fa-users"></i> Guía de Transparencia CEAP
         </a>
     </div>
 
-    <h2><i class="fas fa-file-pdf"></i> Servicios para el Comité</h2>
+    <h2><i class="fas fa-file-pdf"></i> Catálogos de Servicios Especializados</h2>
     <div class="download-section">
         <a href="https://bytecomtec.github.io/catalogo-cctv/" class="btn-download" style="background-color: var(--azul-byte);">
             <i class="fas fa-video"></i> Folleto Videovigilancia
@@ -272,7 +269,7 @@
     <h2><i class="fa fa-comments"></i> Contacto y Soporte</h2>
     <div class="download-section">
         <a href="https://bytecomtec.com/solicitud.html/" class="btn-download" style="background-color: #ff7f2a;">
-            <i class="fas fa-wrench"></i> Solicitar servicio
+            <i class="fas fa-wrench"></i> Solicitar Diagnóstico Técnico
         </a>
         <a href="https://bytecomtec.com" class="btn-download" style="background-color: var(--azul-oscuro);">
             <i class="fas fa-globe"></i> Web Oficial
