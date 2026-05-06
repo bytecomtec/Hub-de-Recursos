@@ -1,40 +1,193 @@
-<style>
-    :root {
-        --azul-byte: #01579b;
-        --dorado-byte: #d4a017;
-        --guinda-sep: #a02142; /* Color institucional */
-        --gris-fondo: #f4f7f6;
-        --blanco: #ffffff;
-    }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concentrado de Recursos - Bytecomtec Ingeniería</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --azul-byte: #01579b;
+            --dorado-byte: #d4a017;
+            --guinda-sep: #a02142;
+            --gris-fondo: #f4f7f6;
+            --blanco: #ffffff;
+            --azul-oscuro: #012d52;
+        }
 
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: var(--gris-fondo);
-        margin: 0;
-        color: #333;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--gris-fondo);
+            margin: 0;
+            color: #333;
+        }
 
-    /* ... (mantén tus otros estilos igual) ... */
+        header {
+            background-color: var(--azul-byte);
+            color: var(--blanco);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-    .btn-download, .boton-descarga {
-        background: var(--dorado-byte);
-        color: var(--blanco) !important;
-        padding: 15px 20px;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        transition: all 0.3s ease;
-        border: none;
-        text-align: center;
-    }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
 
-    .btn-download:hover, .boton-descarga:hover {
-        background: #b88a14;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-</style>
+        .logo-img { max-width: 180px; height: auto; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            border-left: 5px solid var(--dorado-byte);
+            padding-left: 15px;
+            color: var(--azul-byte);
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        /* Grid de Videos */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .card-body { padding: 1.5rem; }
+        .card-title { font-weight: bold; margin-bottom: 8px; color: var(--azul-byte); }
+
+        /* SECCIÓN DE BOTONES - AQUÍ RECUPERAMOS EL ESTILO */
+        .download-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        /* Estilo base para todos los botones */
+        .btn-download, .boton-descarga {
+            color: white !important;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: opacity 0.2s, transform 0.2s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-download:hover, .boton-descarga:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="logo.png" alt="Logo Bytecomtec" class="logo-img">
+        <h1 style="margin:0; font-size: 1.6rem;">BYTECOMTEC INGENIERÍA</h1>
+        <p style="margin:5px 0 0 0; opacity:0.9;">La precisión de la ingeniería, la certeza de la seguridad</p>
+    </div>
+</header>
+
+<div class="container">
+    
+    <h2><i class="fas fa-play-circle"></i> Videoteca de Seguridad Escolar</h2>
+    <div class="video-grid">
+        <!-- Ejemplo de Card -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://bytecomtec.github.io/Bulling/" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Prevención de Bullying</div>
+            </div>
+        </div>
+        <!-- (Puedes re-insertar los otros videos aquí con la misma estructura) -->
+    </div>
+
+    <h2><i class="fas fa-user-check"></i> Guías de apoyo La Escuela es Nuestra</h2>
+    <div class="download-section">
+        <a href="https://bytecomtec.github.io/Informacion/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-warning"></i> Info Atención 2026
+        </a>
+
+        <a href="https://bytecomtec.github.io/Guia_facilitador/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-edit"></i> Guía Facilitador 2026
+        </a>
+
+        <a href="https://bytecomtec.github.io/Tarjeta_Bienestar/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-credit-card"></i> Uso de Tarjeta Bienestar
+        </a>
+
+        <!-- BOTÓN DE DESCARGA PDF RECUPERADO -->
+        <a href="https://bytecomtec.github.io/Guia-Ceap/Guia-CeapV6.pdf" download="Guia-CeapV6.pdf" class="boton-descarga" style="background-color: #721c24;">
+            <i class="fas fa-file-pdf"></i> Descargar Guía CEAP (PDF)
+        </a>
+
+        <a href="https://bytecomtec.github.io/Guia-Ceap/" class="btn-download" style="background-color: var(--guinda-sep);">
+            <i class="fas fa-file-alt"></i> Guía CEAP - (Digital)
+        </a>
+    </div>
+
+    <h2><i class="fa fa-comments"></i> Área de contacto</h2>
+    <div class="download-section">
+        <a href="https://wa.me/525516101675" class="btn-download" style="background-color: #25d366;">
+            <i class="fab fa-whatsapp"></i> WhatsApp Ejecutivo
+        </a>
+        <a href="https://bytecomtec.com" class="btn-download" style="background-color: var(--azul-oscuro);">
+            <i class="fas fa-globe"></i> Página Web
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Bytecomtec Ingeniería y Seguridad Digital<br>San José Tláhuac, CDMX.</p>
+</footer>
+
+</body>
+</html>
