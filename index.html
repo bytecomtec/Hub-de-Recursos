@@ -51,7 +51,6 @@
             text-transform: uppercase;
         }
 
-        /* Grid System */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -59,7 +58,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Cards */
         .card {
             background: var(--blanco);
             border-radius: 12px;
@@ -85,9 +83,7 @@
 
         .card-body { padding: 1.2rem; flex-grow: 1; }
         .card-title { font-weight: bold; margin-bottom: 8px; color: var(--azul-byte); font-size: 1.05rem; }
-        .card-text { font-size: 0.9rem; color: #666; }
 
-        /* Buttons Styles */
         .btn-box { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
         
         .btn {
@@ -113,9 +109,6 @@
         .btn-dark { background-color: var(--azul-oscuro); }
         .btn-wa { background-color: var(--whatsapp); }
 
-        .btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
-
-        /* Footer */
         footer {
             background-color: #f4f4f4;
             padding: 40px 20px;
@@ -134,17 +127,17 @@
 </head>
 <body>
 
-<!-- POP-UP DE BIENVENIDA -->
-<div id="directorio-popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 31, 63, 0.96); z-index: 10000; display: flex; justify-content: center; align-items: center; padding: 20px;">
+<!-- POP-UP CON MEMORIA (localStorage) -->
+<div id="directorio-popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 31, 63, 0.96); z-index: 10000; display: none; justify-content: center; align-items: center; padding: 20px;">
     <div style="background-color: #fff; padding: 35px; border-radius: 12px; max-width: 650px; text-align: center; border-top: 10px solid var(--azul-byte); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
         <h2 style="border:none; padding:0; margin-top:0; color: var(--azul-byte);">Guías de Apoyo Técnico Escolar</h2>
         <p style="font-size: 1.1rem; font-weight: 600; color: #444;">Herramienta para el Comité LEEN y la Cooperativa Escolar.</p>
         <p style="text-align: left; background: #f0f4f8; padding: 20px; border-radius: 8px; font-size: 0.95rem; border-left: 5px solid var(--azul-byte);">
-            <strong>Comunidad Escolar:</strong> Este portal facilita el diagnóstico de necesidades en seguridad y audio, asegurando que sus proyectos tengan respaldo técnico profesional para proteger su inversión.
+            <strong>Comunidad Escolar:</strong> Este portal facilita el diagnóstico de necesidades en seguridad y audio, asegurando que sus proyectos tengan respaldo técnico profesional para proteger su inversión escolar.
         </p>
         <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
             <a href="https://api.whatsapp.com/send?text=Les%20comparto%20este%20portal%20técnico%20para%20los%20proyectos%20de%20la%20escuela%3A%20https%3A%2F%2Fbytecomtec.github.io%2FPortal_de_Recursos%2F" target="_blank" style="background: var(--whatsapp); color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> Compartir con el Comité</a>
-            <button onclick="document.getElementById('directorio-popup').style.display='none'" style="background: var(--azul-byte); color: white; border: none; padding: 12px 40px; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase;">Acceder al Portal Técnico</button>
+            <button onclick="cerrarPopup()" style="background: var(--azul-byte); color: white; border: none; padding: 12px 40px; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase;">Acceder al Portal Técnico</button>
         </div>
     </div>
 </div>
@@ -160,7 +153,6 @@
     <!-- SECCIÓN 1: GUIAS OFICIALES LEEN -->
     <h2><i class="fas fa-university"></i> Recursos Oficiales Programa LEEN 2026</h2>
     <div class="grid-layout">
-        <!-- Tarjeta 1 -->
         <div class="card">
             <div class="card-body">
                 <div class="card-title">Folleto de Atención 2026</div>
@@ -170,7 +162,6 @@
                 </div>
             </div>
         </div>
-        <!-- Tarjeta 2 -->
         <div class="card">
             <div class="card-body">
                 <div class="card-title">Guía del Facilitador</div>
@@ -180,7 +171,6 @@
                 </div>
             </div>
         </div>
-        <!-- Tarjeta 3 -->
         <div class="card">
             <div class="card-body">
                 <div class="card-title">Guía Horario Extendido</div>
@@ -190,7 +180,6 @@
                 </div>
             </div>
         </div>
-        <!-- Tarjeta 4 -->
         <div class="card">
             <div class="card-body">
                 <div class="card-title">Uso de Tarjeta Bienestar</div>
@@ -200,7 +189,6 @@
                 </div>
             </div>
         </div>
-        <!-- Tarjeta 5 -->
         <div class="card">
             <div class="card-body">
                 <div class="card-title">Guía CEAP Ed. Básica</div>
@@ -210,7 +198,6 @@
                 </div>
             </div>
         </div>
-        <!-- Tarjeta 6 -->
         <div class="card">
             <div class="card-body">
                 <div class="card-title">Guía CEAP Medio Superior</div>
@@ -241,6 +228,14 @@
             <div class="video-container"><iframe src="https://bytecomtec.github.io/Video_Audio_Bidireccional/" frameborder="0"></iframe></div>
             <div class="card-body"><div class="card-title">Audio Bidireccional</div></div>
         </div>
+        <div class="card">
+            <div class="video-container"><iframe src="https://bytecomtec.github.io/Cv3/" frameborder="0"></iframe></div>
+            <div class="card-body"><div class="card-title">Identificación Gen 3.0</div></div>
+        </div>
+        <div class="card">
+            <div class="video-container"><iframe src="https://bytecomtec.github.io/Audio_parlante/" frameborder="0"></iframe></div>
+            <div class="card-body"><div class="card-title">Alertas de Red IP</div></div>
+        </div>
     </div>
 
     <!-- SECCIÓN 3: TRANSPARENCIA BYTECOMTEC -->
@@ -267,12 +262,18 @@
     </div>
 
     <!-- SECCIÓN 4: CATÁLOGOS -->
-    <h2><i class="fas fa-book"></i> Catálogos y Pólizas de Mantenimiento</h2>
+    <h2><i class="fas fa-book"></i> Catálogos y Pólizas Especializadas</h2>
     <div class="grid-layout">
         <div class="card">
             <div class="card-body">
                 <div class="card-title">Videovigilancia Escolar</div>
                 <a href="https://bytecomtec.github.io/catalogo-cctv/" class="btn btn-byte"><i class="fas fa-video"></i> VER CATÁLOGO</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">Audio Bidireccional e IP</div>
+                <a href="https://bytecomtec.github.io/Audio_Bidireccional/" class="btn btn-byte"><i class="fas fa-volume-up"></i> VER CATÁLOGO</a>
             </div>
         </div>
         <div class="card">
@@ -283,7 +284,7 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <div class="card-title">Pólizas de Servicio (Cooperativa)</div>
+                <div class="card-title">Pólizas (Cooperativa)</div>
                 <a href="https://bytecomtec.github.io/Poliza/" class="btn btn-byte"><i class="fas fa-tools"></i> VER OPCIONES</a>
             </div>
         </div>
@@ -292,24 +293,39 @@
     <!-- SECCIÓN CONTACTO -->
     <div style="background: var(--azul-oscuro); color: white; padding: 40px; border-radius: 12px; text-align: center; margin-top: 3rem;">
         <h3>¿Necesita apoyo técnico para su escuela?</h3>
-        <p>Realizamos diagnósticos preventivos para asegurar el correcto funcionamiento de sus sistemas.</p>
+        <p>Realizamos diagnósticos profesionales para asegurar la durabilidad de sus sistemas tecnológicos.</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
             <a href="https://wa.me/525516101675" class="btn btn-wa" style="max-width: 250px; padding: 15px;"><i class="fab fa-whatsapp"></i> CONTACTAR INGENIERO</a>
-            <a href="https://bytecomtec.com" class="btn btn-byte" style="max-width: 250px; padding: 15px;"><i class="fas fa-globe"></i> WEB OFICIAL</a>
+            <a href="https://bytecomtec.com/solicitud.html/" class="btn" style="background:#ff7f2a; max-width: 250px; padding: 15px;"><i class="fas fa-wrench"></i> SOLICITAR DIAGNÓSTICO</a>
         </div>
     </div>
 
 </div>
 
-<!-- FOOTER CON DESLINDE LEGAL -->
 <footer>
     <div class="disclaimer-content">
         <p style="text-align: center; font-weight: bold; color: #444; margin-bottom: 15px;">AVISO DE TRANSPARENCIA Y DESLINDE DE RESPONSABILIDAD</p>
-        <p><strong>Bytecomtec</strong> aclara que este portal es un recurso informativo independiente desarrollado para el apoyo técnico de las instituciones educativas. El material con logotipos oficiales del programa "La Escuela Es Nuestra" o de la SEP se comparte bajo el principio de acceso a la información pública y no implica que esta empresa sea parte de la estructura gubernamental.</p>
-        <p>La toma de decisiones y la administración de los recursos financieros son facultad exclusiva del <strong>Comité Escolar (CEAP)</strong> y la <strong>Cooperativa Escolar</strong>. Bytecomtec no condiciona ni garantiza resultados ante procesos de auditoría oficial del programa.</p>
-        <p style="text-align: center; margin-top: 20px; color: #999;">© 2026 Bytecomtec Ingeniería - Tláhuac, Ciudad de México.</p>
+        <p><strong>Bytecomtec</strong> aclara que este portal es un recurso informativo independiente desarrollado para el apoyo técnico de las instituciones educativas. El material con logotipos oficiales se comparte bajo el principio de acceso a la información pública y no implica vinculación oficial con el Gobierno de México.</p>
+        <p>La toma de decisiones y administración de recursos financieros son facultad exclusiva del <strong>Comité Escolar (CEAP)</strong> y la <strong>Cooperativa Escolar</strong>.</p>
+        <p style="text-align: center; margin-top: 20px; color: #999;">© 2026 Bytecomtec Ingeniería - Tláhuac, CDMX.</p>
     </div>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const popup = document.getElementById('directorio-popup');
+        
+        // Solo mostrar si no se ha visto en esta sesión de navegación
+        if (!localStorage.getItem('bytecomtec_popup_visto')) {
+            popup.style.display = 'flex';
+        }
+
+        window.cerrarPopup = function() {
+            popup.style.display = 'none';
+            localStorage.setItem('bytecomtec_popup_visto', 'true');
+        };
+    });
+</script>
 
 </body>
 </html>
