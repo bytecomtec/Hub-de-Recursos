@@ -133,59 +133,59 @@
 </head>
 <body>
 
-<!-- Pop-up de Aviso para Directivos con CTA de Compartir -->
+<!-- Pop-up de Aviso para Directivos - Versión Académica Formal -->
 <div id="directorio-popup" style="
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.92);
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 ">
     <div style="
         background-color: #FFD700; 
         color: #000;
-        padding: 35px;
-        border-radius: 12px;
-        max-width: 650px;
+        padding: 40px;
+        border-radius: 4px;
+        max-width: 700px;
         text-align: center;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-        border: 6px solid #000;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+        border-top: 8px solid #000;
+        border-bottom: 8px solid #000;
     ">
-        <h2 style="font-size: 30px; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
-            ⚠️ AVISO PARA LA DIRECCIÓN ⚠️
+        <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid #000; display: inline-block; padding-bottom: 5px;">
+            Comunicado para la Dirección Escolar
         </h2>
         
-        <p style="font-size: 20px; line-height: 1.4; font-weight: 700; margin-bottom: 15px;">
-            Este Hub y las Guías Técnicas son recursos diseñados para la autonomía del 
-            <strong>Comité Escolar (CEAP)</strong>.
+        <p style="font-size: 19px; line-height: 1.6; font-weight: 700; margin-bottom: 20px;">
+            Este repositorio de recursos técnicos ha sido estructurado específicamente para fortalecer la autonomía en la toma de decisiones del 
+            <strong>Comité Escolar de Administración Participativa (CEAP)</strong>.
         </p>
 
-        <p style="font-size: 18px; line-height: 1.5; margin-bottom: 25px; background: rgba(255,255,255,0.3); padding: 15px; border-radius: 8px;">
-            <strong>Maestro(a):</strong> Le solicitamos atentamente <strong>compartir este enlace con su Comité</strong> o permitirnos agendar una breve sesión informativa directamente con ellos para facilitar su diagnóstico técnico sin cargar a la Dirección.
+        <p style="font-size: 17px; line-height: 1.7; margin-bottom: 30px; font-style: italic; background: rgba(255,255,255,0.4); padding: 20px; border-left: 5px solid #000;">
+            Estimado(a) Maestro(a): Le solicitamos atentamente <strong>hacer extensivo este enlace a los integrantes de su Comité</strong> o, de ser posible, permitirnos coordinar una sesión informativa con ellos para facilitar el diagnóstico técnico <strong>sin generar cargas administrativas adicionales para su Dirección</strong>.
         </p>
 
-        <div style="display: flex; gap: 10px; justify-content: center;">
-            <button onclick="document.getElementById('directorio-popup').style.display='none'" style="
-                background-color: #000;
-                color: #fff;
-                padding: 15px 30px;
-                border: none;
-                border-radius: 6px;
-                font-size: 16px;
-                font-weight: bold;
-                cursor: pointer;
-                text-transform: uppercase;
-            ">
-                ENTENDIDO / ACCEDER
-            </button>
-        </div>
+        <button onclick="document.getElementById('directorio-popup').style.display='none'" style="
+            background-color: #000;
+            color: #fff;
+            padding: 15px 45px;
+            border: none;
+            border-radius: 0px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        ">
+            Confirmar Lectura y Acceder
+        </button>
     </div>
 </div>
 <header>
