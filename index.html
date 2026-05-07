@@ -133,7 +133,7 @@
 </head>
 <body>
 
-<!-- Pop-up de Aviso para Directivos - Versión Académica Formal -->
+<!-- Pop-up de Aviso para Directivos - Versión Académica con WhatsApp -->
 <div id="directorio-popup" style="
     position: fixed;
     top: 0;
@@ -164,30 +164,52 @@
         </h2>
         
         <p style="font-size: 19px; line-height: 1.6; font-weight: 700; margin-bottom: 20px;">
-            Este repositorio de recursos técnicos ha sido estructurado específicamente para fortalecer la autonomía en la toma de decisiones del 
-            <strong>Comité Escolar de Administración Participativa (CEAP)</strong>.
+            Este repositorio técnico ha sido estructurado para fortalecer la autonomía en la toma de decisiones del 
+            <strong>Comité Escolar (CEAP)</strong>.
         </p>
 
         <p style="font-size: 17px; line-height: 1.7; margin-bottom: 30px; font-style: italic; background: rgba(255,255,255,0.4); padding: 20px; border-left: 5px solid #000;">
-            Estimado(a) Maestro(a): Le solicitamos atentamente <strong>hacer extensivo este enlace a los integrantes de su Comité</strong> o, de ser posible, permitirnos coordinar una sesión informativa con ellos para facilitar el diagnóstico técnico <strong>sin generar cargas administrativas adicionales para su Dirección</strong>.
+            Estimado(a) Maestro(a): Le solicitamos atentamente <strong>hacer extensivo este enlace a los integrantes de su Comité</strong> para facilitar el diagnóstico técnico <strong>sin generar cargas administrativas adicionales para su Dirección</strong>.
         </p>
 
-        <button onclick="document.getElementById('directorio-popup').style.display='none'" style="
-            background-color: #000;
-            color: #fff;
-            padding: 15px 45px;
-            border: none;
-            border-radius: 0px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: 0.3s;
-        ">
-            Confirmar Lectura y Acceder
-        </button>
+        <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+            <!-- Botón de WhatsApp -->
+            <a href="https://api.whatsapp.com/send?text=Estimados%20miembros%20del%20Comit%C3%A9%20CEAP%2C%20les%20comparto%20este%20Hub%20de%20Recursos%20T%C3%A9cnicos%20para%20el%20programa%20La%20Escuela%20es%20Nuestra.%20Contiene%20gu%C3%ADas%20de%20apoyo%20para%20nuestro%20diagn%C3%B3stico%3A%20https%3A%2F%2Fbytecomtec.github.io%2FHub-de-Recursos%2F" 
+               target="_blank" 
+               style="
+                background-color: #25D366;
+                color: #fff;
+                padding: 15px 30px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            ">
+                <span style="font-size: 20px;">📱</span> COMPARTIR CON EL COMITÉ POR WHATSAPP
+            </a>
+
+            <!-- Botón de Cerrar -->
+            <button onclick="document.getElementById('directorio-popup').style.display='none'" style="
+                background-color: #000;
+                color: #fff;
+                padding: 12px 40px;
+                border: none;
+                border-radius: 0px;
+                font-size: 14px;
+                font-weight: bold;
+                cursor: pointer;
+                text-transform: uppercase;
+            ">
+                Acceder al Hub (Solo lectura)
+            </button>
+        </div>
     </div>
 </div>
+    
 <header>
     <div class="header-content">
         <img src="logo.png" alt="Logo Bytecomtec" class="logo-img">
