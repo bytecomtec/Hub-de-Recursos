@@ -117,15 +117,63 @@
 </head>
 <body>
 
-<div id="directorio-popup">
-    <div class="popup-content">
-        <h2 style="border:none; color:#856404; margin-top:0;"><i class="fas fa-info-circle"></i> AVISO TÉCNICO</h2>
-        <div style="background: white; padding: 20px; border-radius: 12px; border-left: 8px solid var(--dorado-byte); text-align: left; margin: 20px 0;">
-            <strong>Estimado Comité:</strong> Este portal centraliza las guías oficiales LEEN y recursos de ingeniería de <strong>Bytecomtec</strong> para apoyar la transparencia y calidad técnica de su plantel.
+<div id="directorio-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
+    <div class="popup-content" style="background-color: #ffffff; padding: 40px; border-radius: 12px; max-width: 650px; text-align: center; border-top: 8px solid var(--azul-byte); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+        
+        <div style="color: var(--azul-byte); font-size: 2.5rem; margin-bottom: 15px;">
+            <i class="fas fa-file-invoice"></i>
         </div>
-        <button onclick="cerrarPopup()" class="btn btn-byte" style="width: 100%;">ENTRAR AL PORTAL</button>
+        
+        <h2 style="border:none; color: var(--azul-oscuro); margin-top:0; font-size: 1.6rem; text-transform: none; padding: 0;">
+            Comunicado Técnico para la Dirección Escolar
+        </h2>
+
+        <div style="text-align: justify; color: #444; line-height: 1.6; margin: 25px 0; font-size: 1.05rem;">
+            <p>
+                Como especialistas externos en ingeniería educativa, facilitamos este portal para apoyar la transparencia técnica de su centro escolar. Este recurso es una <strong>herramienta estratégica</strong> para que la Dirección y el Comité (CEAP) validen la viabilidad de sus proyectos de tecnología y mantenimiento.
+            </p>
+            <p style="background-color: #f8f9fa; padding: 15px; border-left: 5px solid var(--dorado-byte); margin-top: 20px;">
+                <strong>Sugerencia Institucional:</strong> Le invitamos a presentar este Hub de Recursos en su próxima sesión de comité como un referente de criterios técnicos y normativa oficial.
+            </p>
+        </div>
+
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <button onclick="cerrarPopup()" class="btn btn-byte" style="flex: 2; padding: 15px; font-size: 1rem;">
+                ACCEDER AL PORTAL TÉCNICO
+            </button>
+            <button onclick="window.print()" class="btn btn-dark" style="flex: 1; padding: 15px; font-size: 0.9rem; background-color: #6c757d;">
+                <i class="fas fa-print"></i> IMPRIMIR
+            </button>
+        </div>
+        
+        <p style="margin-top: 20px; font-size: 0.85rem; color: #888; font-style: italic;">
+            Bytecomtec: Fortaleciendo la Infraestructura Tecnológica de Tláhuac.
+        </p>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const popup = document.getElementById('directorio-popup');
+        
+        // Clave de versión para asegurar que se muestre tras este cambio
+        if (!localStorage.getItem('bytecomtec_comunicado_v3')) {
+            setTimeout(() => {
+                popup.style.display = 'flex';
+            }, 1200);
+        }
+
+        window.cerrarPopup = function() {
+            popup.style.display = 'none';
+            localStorage.setItem('bytecomtec_comunicado_v3', 'true');
+        };
+
+        // Cerrar con Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") cerrarPopup();
+        });
+    });
+</script>
 
 <header>
     <img src="https://bytecomtec.github.io/Portal_de_Recursos/logo.png" alt="Bytecomtec" class="logo-img">
