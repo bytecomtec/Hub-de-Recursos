@@ -118,31 +118,28 @@
 <body>
 
 <div id="directorio-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
-    <div class="popup-content" style="background-color: #ffffff; padding: 40px; border-radius: 12px; max-width: 650px; text-align: center; border-top: 8px solid var(--azul-byte); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+    <div class="popup-content" style="background-color: #ffffff; padding: 40px; border-radius: 12px; max-width: 600px; text-align: center; border-top: 8px solid #003366; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
         
-        <div style="color: var(--azul-byte); font-size: 2.5rem; margin-bottom: 15px;">
+        <div style="color: #003366; font-size: 2.5rem; margin-bottom: 15px;">
             <i class="fas fa-file-invoice"></i>
         </div>
         
-        <h2 style="border:none; color: var(--azul-oscuro); margin-top:0; font-size: 1.6rem; text-transform: none; padding: 0;">
+        <h2 style="border:none; color: #002147; margin-top:0; font-size: 1.6rem; text-transform: none; padding: 0;">
             Comunicado Técnico para la Dirección Escolar
         </h2>
 
         <div style="text-align: justify; color: #444; line-height: 1.6; margin: 25px 0; font-size: 1.05rem;">
             <p>
-                Como especialistas externos en ingeniería educativa, facilitamos este portal para apoyar la transparencia técnica de su centro escolar. Este recurso es una <strong>herramienta estratégica gratuita</strong> para que la Dirección y el Comité (CEAP) validen la viabilidad de sus proyectos de tecnología y mantenimiento.
+                Como especialistas externos en ingeniería educativa, facilitamos este portal para apoyar la transparencia técnica de su centro escolar. Este recurso es una <strong>herramienta estratégica</strong> para que la Dirección y el Comité (CEAP) validen la viabilidad de sus proyectos de tecnología y mantenimiento.
             </p>
-            <p style="background-color: #f8f9fa; padding: 15px; border-left: 5px solid var(--dorado-byte); margin-top: 20px;">
+            <p style="background-color: #f8f9fa; padding: 15px; border-left: 5px solid #D4AF37; margin-top: 20px;">
                 <strong>Sugerencia Institucional:</strong> Le invitamos a presentar este Hub de Recursos en su próxima sesión de comité como un referente de criterios técnicos y normativa oficial.
             </p>
         </div>
 
-        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-            <button onclick="cerrarPopup()" class="btn btn-byte" style="flex: 2; padding: 15px; font-size: 1rem;">
+        <div style="display: flex; justify-content: center;">
+            <button onclick="cerrarPopupDefinitivo()" class="btn-byte" style="width: 100%; padding: 15px; font-size: 1.1rem; background-color: #003366; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
                 ACCEDER AL PORTAL TÉCNICO
-            </button>
-            <button onclick="window.print()" class="btn btn-dark" style="flex: 1; padding: 15px; font-size: 0.9rem; background-color: #6c757d;">
-                <i class="fas fa-print"></i> IMPRIMIR
             </button>
         </div>
         
@@ -156,21 +153,24 @@
     document.addEventListener("DOMContentLoaded", function() {
         const popup = document.getElementById('directorio-popup');
         
-        // Clave de versión para asegurar que se muestre tras este cambio
-        if (!localStorage.getItem('bytecomtec_comunicado_v3')) {
+        // Verifica si el usuario ya cerró el mensaje anteriormente
+        if (!localStorage.getItem('popup_visto_2026')) {
             setTimeout(() => {
                 popup.style.display = 'flex';
-            }, 1200);
+            }, 1000);
         }
 
-        window.cerrarPopup = function() {
+        window.cerrarPopupDefinitivo = function() {
             popup.style.display = 'none';
-            localStorage.setItem('bytecomtec_comunicado_v3', 'true');
+            // Guarda la preferencia para que no vuelva a aparecer
+            localStorage.setItem('popup_visto_2026', 'true');
         };
 
-        // Cerrar con Escape
+        // Opción extra: Cerrar con Escape también guarda la preferencia
         document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") cerrarPopup();
+            if (e.key === "Escape" && popup.style.display === 'flex') {
+                cerrarPopupDefinitivo();
+            }
         });
     });
 </script>
