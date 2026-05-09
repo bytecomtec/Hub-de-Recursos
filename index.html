@@ -99,6 +99,17 @@
         .btn-byte { background-color: var(--azul-byte); }
         .btn-dark { background-color: var(--azul-oscuro); }
         .btn-wa { background-color: var(--whatsapp); }
+        .btn-gold { background-color: var(--dorado-byte); color: #002147 !important; }
+
+        /* Estilo especial para sección destacada del catálogo */
+        .highlight-section {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid var(--dorado-byte);
+            text-align: center;
+            margin: 3rem 0;
+        }
 
         /* Pop-up */
         #directorio-popup {
@@ -148,32 +159,6 @@
         </p>
     </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const popup = document.getElementById('directorio-popup');
-        
-        // Verifica si el usuario ya cerró el mensaje anteriormente
-        if (!localStorage.getItem('popup_visto_2026')) {
-            setTimeout(() => {
-                popup.style.display = 'flex';
-            }, 1000);
-        }
-
-        window.cerrarPopupDefinitivo = function() {
-            popup.style.display = 'none';
-            // Guarda la preferencia para que no vuelva a aparecer
-            localStorage.setItem('popup_visto_2026', 'true');
-        };
-
-        // Opción extra: Cerrar con Escape también guarda la preferencia
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape" && popup.style.display === 'flex') {
-                cerrarPopupDefinitivo();
-            }
-        });
-    });
-</script>
 
 <header>
     <img src="https://bytecomtec.github.io/Portal_de_Recursos/logo.png" alt="Bytecomtec" class="logo-img">
@@ -231,6 +216,22 @@
         <div class="card"><div class="card-body"><div class="card-title">Carta de Presentación</div><a href="https://bytecomtec.github.io/Carta_Presentacion/" class="btn btn-dark">VER</a></div></div>
         <div class="card"><div class="card-body"><div class="card-title">Selección de Proveedores</div><a href="https://bytecomtec.github.io/seleccion-proveedores/" class="btn btn-dark">VER</a></div></div>
         <div class="card"><div class="card-body"><div class="card-title">Guía de Transparencia CEAP</div><a href="https://bytecomtec.github.io/Guia_tecnica/" class="btn btn-dark">VER</a></div></div>
+    </div>
+
+    <!-- NUEVA SECCIÓN: Ecosistema de Soluciones (Catálogo Byte_grid) -->
+    <div class="highlight-section">
+        <h2 style="border:none; margin-top:0; color: var(--azul-byte); text-align: center; padding: 0;">
+            <i class="fas fa-microchip"></i> Ecosistema de Soluciones para el Bienestar Escolar
+        </h2>
+        <p style="font-size: 1.1rem; color: #555; max-width: 800px; margin: 15px auto 25px auto;">
+            Explore nuestra plataforma interactiva de infraestructura tecnológica. Diseñada para facilitar la visualización de proyectos de seguridad, conectividad y protección institucional.
+        </p>
+        <a href="https://bytecomtec.github.io/Byte_grid/" class="btn btn-gold" style="max-width: 400px; margin: 0 auto; padding: 18px; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);">
+            <i class="fas fa-external-link-alt"></i> ABRIR CATÁLOGO INTELIGENTE 2026
+        </a>
+        <p style="margin-top: 15px; font-size: 0.85rem; color: var(--azul-oscuro); font-weight: bold;">
+            Herramienta visual para Directores y Comités Escolares.
+        </p>
     </div>
     
     <h2><i class="fas fa-university"></i> Normativa y Reglas de Operación LEEN</h2>
@@ -332,13 +333,24 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const popup = document.getElementById('directorio-popup');
-        if (!localStorage.getItem('bytecomtec_vfinal')) {
-            setTimeout(() => { popup.style.display = 'flex'; }, 1000);
+        
+        // Verifica si el usuario ya cerró el mensaje anteriormente
+        if (!localStorage.getItem('popup_visto_2026')) {
+            setTimeout(() => {
+                popup.style.display = 'flex';
+            }, 1000);
         }
-        window.cerrarPopup = function() {
+
+        window.cerrarPopupDefinitivo = function() {
             popup.style.display = 'none';
-            localStorage.setItem('bytecomtec_vfinal', 'true');
+            localStorage.setItem('popup_visto_2026', 'true');
         };
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape" && popup.style.display === 'flex') {
+                cerrarPopupDefinitivo();
+            }
+        });
     });
 </script>
 
